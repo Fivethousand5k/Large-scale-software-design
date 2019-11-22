@@ -10,7 +10,7 @@ import sys
 import os
 import threading
 
-video_path="/home/cliang/vsa_server/camera/origin"  # where the videos are strored
+video_path="F:\python_programs/video-for-map"  # where the videos are strored
 
 
 class Map(Ui_MyMap,QDialog):
@@ -22,7 +22,7 @@ class Map(Ui_MyMap,QDialog):
         self.setupUi(self)
         self.cam_list = [self.cam_17,self.cam_18,self.cam_19,self.cam_20,
                          self.cam_21,self.cam_23,self.cam_24,self.cam_25,
-                         self.cam_27,self.cam_28,self.cam_36,self.cam_37]
+                         self.cam_27,self.cam_28,self.cam_36,self.cam_35]
 
         self.init_connect()
         self.init_animation()
@@ -48,13 +48,19 @@ class Map(Ui_MyMap,QDialog):
 
     def showFiles(self):
         name = self.sender().objectName()         #the name of the radiobutton from which the activating signal was
+        print(name)
         self.cam_selected=name[4:]
         videos_list=os.listdir(video_path+"/"+self.cam_selected)
         videos_list.sort()          # make the videos in order
 
-        panel=File_list(videos_list,123)
-        panel.List_Signal.connect(self.get_Signal_from_list)    # the signal from list would activate the func(get_Signal_from_list)
-        panel.exec()
+        absolute_path = []
+        for video in videos_list:
+            absolute_path.append(video_path + "/" + self.cam_selected + "/" + video)
+        self.Map_Signal.emit(absolute_path)
+        self.close()
+        # panel=File_list(videos_list,123)
+        # panel.List_Signal.connect(self.get_Signal_from_list)    # the signal from list would activate the func(get_Signal_from_list)
+        # panel.exec()
 
 
     def get_Signal_from_list(self,connect):

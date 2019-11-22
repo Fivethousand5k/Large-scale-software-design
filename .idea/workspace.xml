@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6de2fc1e-5c84-42e1-8c9a-385bebe94aa7" name="Default Changelist" comment="" />
+    <list default="true" id="6de2fc1e-5c84-42e1-8c9a-385bebe94aa7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_of_Map.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_of_Map.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI_of_Map.ui" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_of_Map.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MAP.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAP.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/myVIdeoProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/myVIdeoProcessing.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,47 +22,13 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>label</find>
-      <find>draw</find>
-      <find>init</find>
-      <find>print</find>
-      <find>file_num</find>
-      <find>choice</find>
-      <find>open</find>
-      <find>setScaledContents (True)</find>
-      <find>label_2</find>
-      <find>play(</find>
-      <find>play</find>
-      <find>restart(</find>
-      <find>play()</find>
-      <find>count</find>
-      <find>self.count</find>
-      <find>change</find>
-      <find>self.</find>
-      <find>self.v</find>
-      <find>ins</find>
-      <find>eventf</find>
-      <find>event</find>
-      <find>self.ca</find>
-      <find>self.Mymap</find>
-      <find>BTN_test</find>
-      <find>update_limit</find>
-      <find>thr</find>
-      <find>predic</find>
-      <find>np.ar</find>
-      <find>draw_this</find>
-      <find>detector</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>self.frame_total</replace>
-      <replace>Mymap</replace>
-    </replaceStrings>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1T3J5RaZmmklzS7T835Oxb3NRGl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
   </component>
@@ -124,9 +97,6 @@
       <module name="demonstration" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="G:\Anaconda\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -222,12 +192,23 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/myVIdeoProcessing.py</url>
-          <line>447</line>
+          <line>449</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

@@ -225,10 +225,11 @@ class myVideoProcessing(Ui_MainWindow, QMainWindow):
             self.frame_total = self.videoCap.get(7)  # get the total num of frames of the video being played
             self.progressBar.setMaximum(self.frame_total)
             print("Playing:" + video)
-            print(self.count)
+            print(self.frame_total)
             self.videoCap.set(cv2.CAP_PROP_POS_FRAMES, self.count)  # 设置从哪一帧开始播放视�?
             print("num:",self.videoCap.get(1))
             while self.playable:  # 点击pause按钮时，playable会被设置成False
+                time.sleep(0.05)
                 self.mutex1.acquire()
                 flag, frame = self.videoCap.read()
                 self.mutex1.release()
@@ -428,6 +429,7 @@ class myVideoProcessing(Ui_MainWindow, QMainWindow):
         Mymap.Map_Signal.connect(self.get_Signal_from_Map)      #receive the signal from Map
         Mymap.exec_()
 
+
         if not from_play:
             self.video_thread = threading.Thread(target=self.playVideo1)
             self.video_thread.start()
@@ -516,6 +518,7 @@ class myVideoProcessing(Ui_MainWindow, QMainWindow):
             self.video_thread.join()        #让上一次play创建的子进程结束
             self.playable = True
         if connect is not None:
+            print(connect)
             self.videos_selected=connect
             self.count=0            # reset the count
             self.file_num = 0
@@ -539,6 +542,7 @@ class myVideoProcessing(Ui_MainWindow, QMainWindow):
             effect.setOffset(0, 0)
             effect.setColor(Qt.gray)
             self.label_map.setGraphicsEffect(effect)
+        pass
 
 
 
