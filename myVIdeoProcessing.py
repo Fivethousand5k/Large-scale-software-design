@@ -29,12 +29,17 @@ import os
 # import freetype
 
 
+txt_root_path="F:\python_programs\大型软件设计/txt-results"
+
 name_list=['周建力', '姜龙祥', '张精制', '方寒', '柴笑宇', '沈宇轩', 'unknown', '阮威健', '虞吟雪', '郑淇', 'unknown', '陈金', '胡亮', '彭冬梅', '1', '1', '徐东曙', '廖良', '陈俊奎', '洪琪', '高熙越', '黄志兵', '张莎莎', '1', '高腾飞', '陈超', '1', '叶钰', '2', '许海燕', '朱玟谦', '汤云波', '江奎', '1', '丁新', '1', '王旭', '杨光耀', '刘旷也', '1', '王晓芬', '张垒', '郭进', '陈宇静', '胡梦顺', '张钰慧', '梁超', '王南西', '陈宇', '陈军', 'unknown', 'unknown', '2', '刘勇琰', '1', '兰佳梅', 'unknown', '黄鹏', '沈心怡', '陈思维', '陈保金', '王光成', '詹泽行', '赵海法', '焦黎', '胡必成', '孙志宏', '王松', '1', '1', '1', '万东帅', '1', '里想', '1', '陈丹', '1', '魏明高', '聂伟凡', '屈万倩', '柯亨进', '1', '2', '陈培璐', '', '1', '1', '李希希', '易敏', '张琪', '1', '刘晗', '1', '1', '白云鹏', '1', '1', '阮威健', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '黄文心', '1', '1', '1', '1', '1', '1', '1','1','1','1','1','1']
 
 for i in range(len(name_list)):
     if name_list[i]=='1':
         name_list[i]=str(i)
 name_list[100]='5000'
+
+
+video_test=['F:\python_programs/video-for-map/36/new-treasure-island.mp4']
 
 class myVideoProcessing(Ui_MainWindow, QMainWindow):
     def __init__(self):
@@ -70,6 +75,7 @@ class myVideoProcessing(Ui_MainWindow, QMainWindow):
         self.timer = QTimer(self)  # 3
         self.timer.start(50)
         self.semaphore=True    # used for
+        self.person_detect_switch=False
         # self.detector = detector()
         # self.detector.init(gpu_id=0)
         # self.extractor = faceExtractor()
@@ -85,7 +91,7 @@ class myVideoProcessing(Ui_MainWindow, QMainWindow):
         self.BTN_OPEN.clicked.connect(self.openFile)      #打开文件�?
 
 
-        # self.Maptest.clicked.connect(self.openMap)  # open the map
+        self.BTN_test.clicked.connect(self.change_state_of_detection)  # open the map
         self.Slider1.valueChanged.connect(self.change_pred_threshold)  # 修改pred_threshold，应用于func1
         self.Slider2.valueChanged.connect(self.change_judge_threshold)  # 修改judge_threshold，应用于func2
         # self.Slider_delay.valueChanged.connect(self.change_interval)
@@ -228,6 +234,9 @@ class myVideoProcessing(Ui_MainWindow, QMainWindow):
             print(self.frame_total)
             self.videoCap.set(cv2.CAP_PROP_POS_FRAMES, self.count)  # 设置从哪一帧开始播放视�?
             print("num:",self.videoCap.get(1))
+
+            boxes=self.detect_boxes[video]
+
             while self.playable:  # 点击pause按钮时，playable会被设置成False
                 time.sleep(0.05)
                 self.mutex1.acquire()
@@ -242,6 +251,8 @@ class myVideoProcessing(Ui_MainWindow, QMainWindow):
                     # The frame is ready and already captured
                     if jump_count == 0:
                         # frame, flag = self.draw_this_frame(frame, self.count)
+                        if self.person_detect_switch:
+                            frame=self.draw_boxes_for_detection(frame,self.count,boxes)
                         show = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)  # 将BGR转化成RGB
                         showImage = QImage(show.data, show.shape[1], show.shape[0],
                                            QImage.Format_RGB888)  # 转换成QImage类型
@@ -485,31 +496,54 @@ class myVideoProcessing(Ui_MainWindow, QMainWindow):
         self.semaphore=True
         self.mutex4.release()
 
-    def draw_this_frame(self, img, count):  # 为某一帧增加矩形框
-
-        boxes, identities, scores = self.prediction(img)
-
-
-        for i in range(len(boxes)):
-            pt1 = (boxes[i][1], boxes[i][0])  # 矩形左上角点
-            pt2 = (boxes[i][3], boxes[i][2])  # 矩形右下角点
-            num = identities[i]  # 轨迹的序�?\
-            color=MyColor.colorsHub[num%MyColor.color_total]
-            cv2.rectangle(img, pt1, pt2, color, 2)
-            max_pred_index_old = np.argmax(scores[i])  # 得到对于该帧中某一轨迹的最大判断分数在name中的索引
-            max_pred_old = scores[i][max_pred_index_old]  # 对于该帧中某一轨迹的最大判断分�?
-            max_pred_new, max_pred_index_new, flag = self.func_selector(num, pt1, pt2, max_pred_index_old, max_pred_old)
-            if max_pred_index_old == max_pred_index_new:
-                img = self.paint_chinese_opencv(img, str(self.name[max_pred_index_new]), pt1, (0, 255, 0), flag,isRevised=False)
-            else:
-                img = self.paint_chinese_opencv(img, str(self.name[max_pred_index_new]), pt1, (0, 255, 0), flag,
-                                                isRevised=True)
-
-        if scores is None:
-            flag = False
+    def draw_boxes_for_detection(self,frame,frame_id,boxes):
+        if frame_id in boxes:
+            boxes_for_this_frame=boxes[frame_id]
+            for box in boxes_for_this_frame:
+                pt1 = (box[0], box[1])  # 矩形左上角点
+                pt2 = (box[2], box[3])  # 矩形右下角点
+                cv2.rectangle(frame, pt1, pt2, (144,238,144), 3)
         else:
-            flag=True
-        return img, flag
+            pass
+        return frame
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # def draw_this_frame(self, img, count):  # 为某一帧增加矩形框
+    #
+    #     boxes, identities, scores = self.prediction(img)
+    #
+    #
+    #     for i in range(len(boxes)):
+    #         pt1 = (boxes[i][1], boxes[i][0])  # 矩形左上角点
+    #         pt2 = (boxes[i][3], boxes[i][2])  # 矩形右下角点
+    #         num = identities[i]  # 轨迹的序�?\
+    #         color=MyColor.colorsHub[num%MyColor.color_total]
+    #         cv2.rectangle(img, pt1, pt2, color, 2)
+    #         max_pred_index_old = np.argmax(scores[i])  # 得到对于该帧中某一轨迹的最大判断分数在name中的索引
+    #         max_pred_old = scores[i][max_pred_index_old]  # 对于该帧中某一轨迹的最大判断分�?
+    #         max_pred_new, max_pred_index_new, flag = self.func_selector(num, pt1, pt2, max_pred_index_old, max_pred_old)
+    #         if max_pred_index_old == max_pred_index_new:
+    #             img = self.paint_chinese_opencv(img, str(self.name[max_pred_index_new]), pt1, (0, 255, 0), flag,isRevised=False)
+    #         else:
+    #             img = self.paint_chinese_opencv(img, str(self.name[max_pred_index_new]), pt1, (0, 255, 0), flag,
+    #                                             isRevised=True)
+    #
+    #     if scores is None:
+    #         flag = False
+    #     else:
+    #         flag=True
+    #     return img, flag
 
     def get_Signal_from_Map(self,connect):
 
@@ -520,12 +554,48 @@ class myVideoProcessing(Ui_MainWindow, QMainWindow):
         if connect is not None:
             print(connect)
             self.videos_selected=connect
+            self.detect_boxes=self.get_boxes_of_detection(self.videos_selected)
+            print(self.detect_boxes)
             self.count=0            # reset the count
             self.file_num = 0
             self.traits = {}  # 重置轨迹字典
         else:
             #maybe there could be a notification
             pass
+
+    def get_boxes_of_detection(self,video_selected):
+        boxes={}
+        for video in video_selected:
+            video_name = video.split('/')[-1]
+            file_name = video.split('/')[-2]
+            txt_name = video_name.replace("mp4","txt")
+            txt_path=os.path.join(txt_root_path,file_name,txt_name)
+            if not os.path.exists(txt_path):
+                print("{} not exist",format(txt_path))
+                boxes[video] = {}
+            else:
+                boxes[video] = {}
+                with open(txt_path) as f:
+                    for line in f.readlines():
+
+                        line=line.split(' ')
+                        frame_id=int(line[0])
+                        x1=int(line[1])
+                        y1=int(line[2])
+                        x2 = int(line[3])
+                        y2 = int(line[4])
+                        if frame_id not in boxes[video]:
+                          boxes[video][frame_id]=[[x1,y1,x2,y2]]
+                        else:
+                          boxes[video][frame_id].append([x1, y1, x2, y2])
+                f.close()
+        print(boxes)
+        return boxes
+
+    def change_state_of_detection(self):
+        self.person_detect_switch=not self.person_detect_switch
+
+            
 
     def eventFilter(self, object, event):
 
@@ -549,10 +619,13 @@ class myVideoProcessing(Ui_MainWindow, QMainWindow):
 
 
 
-
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     video_gui = myVideoProcessing()
     video_gui.setAttribute(Qt.WA_DeleteOnClose)
     video_gui.show()
     sys.exit(app.exec_())
+
+
+
+

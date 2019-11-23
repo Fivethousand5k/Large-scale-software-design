@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6de2fc1e-5c84-42e1-8c9a-385bebe94aa7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/demonstration.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/demonstration.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_of_Map.py" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_of_Map.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/GUI_of_Map.ui" beforeDir="false" afterPath="$PROJECT_DIR$/GUI_of_Map.ui" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAP.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAP.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/myVIdeoProcessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/myVIdeoProcessing.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -23,14 +21,19 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Fivethousand &lt;38652084+wuqian5000@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1T3J5RaZmmklzS7T835Oxb3NRGl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.externalTools" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../mmap_vsa" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -50,7 +53,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.myVIdeoProcessing">
+  <component name="RunManager" selected="Python.love5000">
     <configuration name="File_list" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="demonstration" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -93,10 +96,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="love5000" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="demonstration" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../Alien_Invasion" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../Alien_Invasion/love5000.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="myVIdeoProcessing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="demonstration" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="G:\Anaconda\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -132,41 +159,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="name1" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="demonstration" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/name1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.File_list" />
       <item itemvalue="Python.MAP" />
       <item itemvalue="Python.myVIdeoProcessing" />
       <item itemvalue="Python.name (1)" />
-      <item itemvalue="Python.name1" />
+      <item itemvalue="Python.love5000" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.love5000" />
         <item itemvalue="Python.myVIdeoProcessing" />
         <item itemvalue="Python.MAP" />
         <item itemvalue="Python.name (1)" />
         <item itemvalue="Python.File_list" />
-        <item itemvalue="Python.name1" />
       </list>
     </recent_temporary>
   </component>
@@ -181,6 +187,14 @@
       <option name="presentableId" value="Default" />
       <updated>1563262700395</updated>
     </task>
+    <task id="LOCAL-00001" summary="完成map的文件地址映射">
+      <created>1574478730196</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1574478730197</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -197,11 +211,17 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="完成map的文件地址映射" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成map的文件地址映射" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
