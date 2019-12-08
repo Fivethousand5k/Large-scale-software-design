@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6de2fc1e-5c84-42e1-8c9a-385bebe94aa7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6de2fc1e-5c84-42e1-8c9a-385bebe94aa7" name="Default Changelist" comment="第二轮迭代-多视频播放主界面" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +205,21 @@
       <option name="project" value="LOCAL" />
       <updated>1575785490212</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="第二轮迭代-多视频播放主界面">
+      <created>1575786953318</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1575786953318</updated>
+    </task>
+    <task id="LOCAL-00005" summary="第二轮迭代-多视频播放主界面">
+      <created>1575786964154</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1575786964154</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -235,7 +247,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="完成map的文件地址映射" />
     <MESSAGE value="第二轮迭代" />
-    <option name="LAST_COMMIT_MESSAGE" value="第二轮迭代" />
+    <MESSAGE value="第二轮迭代-多视频播放主界面" />
+    <option name="LAST_COMMIT_MESSAGE" value="第二轮迭代-多视频播放主界面" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
