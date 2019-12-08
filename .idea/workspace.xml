@@ -50,7 +50,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.love5000">
+  <component name="RunManager" selected="Python.myVIdeoProcessing">
     <configuration name="File_list" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="demonstration" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,9 +118,6 @@
       <module name="demonstration" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="G:\Anaconda\python.exe" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
@@ -165,8 +162,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.love5000" />
         <item itemvalue="Python.myVIdeoProcessing" />
+        <item itemvalue="Python.love5000" />
         <item itemvalue="Python.MAP" />
         <item itemvalue="Python.name (1)" />
         <item itemvalue="Python.File_list" />
