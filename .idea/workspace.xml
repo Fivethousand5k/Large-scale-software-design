@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6de2fc1e-5c84-42e1-8c9a-385bebe94aa7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MAP.py" beforeDir="false" afterPath="$PROJECT_DIR$/MAP.py" afterDir="false" />
-    </list>
+    <list default="true" id="6de2fc1e-5c84-42e1-8c9a-385bebe94aa7" name="Default Changelist" comment="第二轮迭代-多视频播放主界面" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +230,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575787152275</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="第二轮迭代-多视频播放主界面">
+      <created>1576769614594</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1576769614594</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
