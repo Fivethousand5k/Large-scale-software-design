@@ -23,6 +23,12 @@
         <option value="Fivethousand &lt;38652084+wuqian5000@users.noreply.github.com&gt;" />
       </list>
     </option>
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1T3J5RaZmmklzS7T835Oxb3NRGl" />
