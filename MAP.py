@@ -10,7 +10,7 @@ import sys
 import os
 import threading
 
-video_path="F:\python_programs/video-for-map"  # where the videos are strored
+video_path="F:\python_programs\大型软件设计/video-for-map"  # where the videos are stored
 
 
 class Map(Ui_MyMap,QDialog):
